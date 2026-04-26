@@ -1,3 +1,8 @@
 *.pkl
+.venv/
+.runtime_home/
+logs/
+pip/
+__pycache__/
 *.h5
 *.joblib
