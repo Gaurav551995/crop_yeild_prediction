@@ -62,33 +62,6 @@ python -m venv .venv
 .venv\Scripts\python -m streamlit run app.py
 ```
 
-### Option 3: Run with Docker
-
-This is a good option if you want the app bundled into one portable image.
-
-Build the image:
-
-```powershell
-docker build -t crop-yield-planner .
-```
-
-Run the container:
-
-```powershell
-docker run --rm -p 8501:8501 crop-yield-planner
-```
-
-Then open:
-
-`http://localhost:8501`
-
-Notes for Docker:
-
-- Docker Desktop must be installed on the PC.
-- The image includes Python and all Python package requirements.
-- If you later add the optional model files (`crop_model.pkl`, `scaler.pkl`, `crop_encoder.pkl`, `dist_encoder.pkl`) into the project before building, they will also be packaged into the image.
-- Streamlit is exposed on port `8501`.
-
 ## Requirements
 
 - Windows
