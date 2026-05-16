@@ -569,11 +569,12 @@ with st.sidebar:
 
     district = st.selectbox("District", district_options, index=district_default)
     district_snapshot = baseline_df.loc[baseline_df["Dist Name"] == district].iloc[0]
+    default_area = max(0.1, float(round(district_snapshot["typical_area"], 1)))
 
     area = st.number_input(
         "Farm area (1000 ha)",
         min_value=0.1,
-        value=float(round(district_snapshot["typical_area"], 1)),
+        value=default_area,
         step=0.1,
         help="Enter the land area using the same unit used in the training dataset.",
     )
